@@ -10,11 +10,12 @@ ME_URL = reverse('user:me')
 
 
 def create_user(**params):
+    """Helper function to create new user"""
     return get_user_model().objects.create_user(**params)
 
 
 class PublicUserApiTests(TestCase):
-    """Test the user API (Public)"""
+    """Test the users API (Public)"""
 
     def setUp(self):
         self.client = APIClient()
